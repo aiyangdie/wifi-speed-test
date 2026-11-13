@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/covers/40-wifi-speed-test.jpg" alt="wifi-speed-test 项目封面" width="100%"></p>
+
 # WiFi 网速测试软件
 
 一款简洁美观的 Windows WiFi / 网络测速工具，由 **艾阳** 开发并开源。
