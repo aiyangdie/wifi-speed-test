@@ -1,77 +1,54 @@
-<p align="center"><img src="assets/covers/40-wifi-speed-test.jpg" alt="wifi-speed-test 项目封面" width="100%"></p>
+<p align="center"><img src="assets/covers/40-wifi-speed-test.jpg" alt="WiFi 测速 项目封面" width="100%"></p>
 
-# WiFi 网速测试软件
+<h1 align="center">WiFi 网速测试</h1>
 
-一款简洁美观的 Windows WiFi / 网络测速工具，由 **艾阳** 开发并开源。
+<p align="center">Windows 桌面测速小工具：看当前 Wi-Fi 信息，一键测延迟、下行与上行</p>
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
+<p align="center">
+  <a href="LICENSE">MIT 许可</a>
+</p>
 
-## 功能特性
+## 简介
 
-- 📶 **WiFi 信息展示** — 显示当前连接的 WiFi 名称、信号强度、本机 IP、网关
-- ⚡ **一键测速** — 测试延迟 (Ping)、下载速度、上传速度
-- 🎨 **现代化界面** — 深色主题，简洁直观
-- 🌐 **基于 speedtest.net** — 使用全球测速节点，结果准确可靠
+双击就能用的测速软件：先显示当前连接的 Wi-Fi 名称、信号强度、本机 IP 和网关，再点一下测速，把 Ping、下载、上传三项结果摆出来。基于 speedtest.net 的全球节点，结果可比性较好。
 
-## 环境要求
+## 功能
 
-- Windows 10 / 11
-- Python 3.9 或更高版本
+- **Wi-Fi 信息**：当前 SSID、信号强度、本机 IP、网关
+- **一键测速**：延迟（Ping）、下载速度、上传速度
+- **深色界面**：Tkinter 写的单窗口布局，信息分区清晰
+- **真实节点**：调用 speedtest.net 测速节点，不做过场动画
+- **一键启动**：附带 `启动测速.bat`，不必记命令
+
+## 技术栈
+
+Python 3.9+ · Tkinter（Windows 自带）· speedtest-cli ｜ 网络信息取 `netsh` / `ipconfig`
 
 ## 快速开始
-
-### 1. 克隆项目
 
 ```bash
 git clone https://github.com/aiyangdie/wifi-speed-test.git
 cd wifi-speed-test
-```
-
-### 2. 安装依赖
-
-```bash
 pip install -r requirements.txt
-```
-
-### 3. 运行
-
-```bash
 python main.py
 ```
 
-也可以双击 `启动测速.bat` 一键启动。
+或直接双击 `启动测速.bat`。
 
 ## 项目结构
 
 ```
-├── main.py           # 主程序（GUI 界面）
-├── network_info.py   # Windows 网络信息获取
-├── speed_test.py     # 测速核心逻辑
-├── requirements.txt  # Python 依赖
-├── 启动测速.bat      # 一键启动脚本
-├── LICENSE           # MIT 开源协议
-└── README.md         # 项目说明
+main.py            主程序（GUI 与测速流程）
+network_info.py    Windows 网络信息获取
+speed_test.py      测速核心逻辑
+requirements.txt   依赖
+启动测速.bat        一键启动
 ```
 
-## 技术栈
+## 说明
 
-| 组件 | 说明 |
-|------|------|
-| Python + Tkinter | 跨平台 GUI（Windows 内置） |
-| speedtest-cli | speedtest.net 官方 Python 库 |
-| netsh / ipconfig | Windows 原生网络信息 |
+测速结果受节点、时段与线路影响，同一网络多次测量取中位数更可靠。
 
-## 作者
+## 许可证
 
-- **艾阳** — [GitHub @aiyangdie](https://github.com/aiyangdie)
-- 邮箱: aike1015@qq.com
-
-## 开源协议
-
-本项目采用 [MIT License](LICENSE) 开源，可自由使用、修改和分发。
-
-## 贡献
-
-欢迎提交 Issue 和 Pull Request！
+[MIT](LICENSE) ｜ 作者 [@aiyangdie](https://github.com/aiyangdie) · aike1015@qq.com
